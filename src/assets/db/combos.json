@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Combo 1",
+        "products": [
+            {
+                "id": 100,
+                "name": "Blonde Roast"
+            },
+            {
+                "id": 101,
+                "name": "Caffe Misto"
+            }
+        ],
+        "discount": 0.25
+    },
+    {
+        "id": 2,
+        "name": "Combo 2",
+        "products": [
+            {
+                "id": 200,
+                "name": "Caffè Americano"
+            },
+            {
+                "id": 201,
+                "name": "Caffè Latte"
+            }
+        ],
+        "discount": 0.2
+    },
+    {
+        "id": 3,
+        "name": "Combo 3",
+        "products": [
+            {
+                "id": 300,
+                "name": "Iced Coffee"
+            },
+            {
+                "id": 301,
+                "name": "Iced Coffee with Milk"
+            }
+        ],
+        "discount": 0.15
+    },
+    {
+        "id": 4,
+        "name": "Combo 4",
+        "products": [
+            {
+                "id": 400,
+                "name": "Shaken Sweet Tea"
+            },
+            {
+                "id": 401,
+                "name": "Shaken Iced Black Tea"
+            }
+        ],
+        "discount": 0.1
+    }
+]

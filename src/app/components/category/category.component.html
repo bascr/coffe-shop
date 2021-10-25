@@ -1,0 +1,10 @@
+<mat-card class="category-card card-shadow" (click)="selectCategory.emit()">
+    <mat-card-header>
+        <div mat-card-avatar class="category-header-image" [ngStyle]="{ 'background-image': 'url(' + category.detail_image + ')'}"></div>
+        <mat-card-title>{{ category.name }}</mat-card-title>
+        <mat-card-subtitle>{{ category.title }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ category.subtitle }}</mat-card-subtitle>
+    </mat-card-header>
+</mat-card>
+
+

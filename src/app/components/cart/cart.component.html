@@ -1,0 +1,31 @@
+<div>
+    <mat-card class="cart-card">
+        <mat-card-title>Cart</mat-card-title>
+        <mat-card-subtitle *ngIf="cart.productList.length > 0">Items</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="cart.productList.length === 0">Your cart is empty.</mat-card-subtitle>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item *ngFor="let item of cart.productList">
+                  {{ item.product.name }} [ Price: ${{ item.product.price }} + Tax: {{ item.product.tax }}% x Quantity: {{ item.quantity}} ]
+                  <span class="cart-spacer"></span>
+                  ${{ (item.product.price + (item.product.price * (item.product.tax / 100))) * item.quantity | number:'1.1-2' }}
+                </mat-list-item>
+            </mat-list>
+            <mat-list>
+                <mat-list-item *ngFor="let combo of combosToApply">
+                    {{ combo.name }} [ Discount: {{ combo.discount * 100 }}% ]
+                    <div *ngFor="let product of combo.products">
+                        [ {{ product.name }} ]
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+        <mat-card-actions>
+            <a routerLink="/home" routerLinkActive="active">
+                <button mat-button class="cart-button-font">GO BACK</button>
+            </a>
+            <button mat-button class="cart-button-font" *ngIf="cart.total !== 0" (click)="cancel()">CANCEL</button>
+            <button mat-button class="cart-button-font" *ngIf="cart.total !== 0" (click)="payBill()">PAY ${{ cart.total | number:'1.1-2'  }}</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

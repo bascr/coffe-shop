@@ -1,0 +1,25 @@
+<div>
+    <h1 class="category-title">Select a Category</h1>
+    <mat-grid-list cols="5" rowHeight="200px">
+        <mat-grid-tile class="category-container" *ngFor="let category of categories">
+            <app-category [category]="category" (selectCategory)="onGetProductList(category.id)"></app-category>
+        </mat-grid-tile> 
+    </mat-grid-list>
+    <h1 class="products-title">Products</h1>
+    <mat-grid-list *ngIf="!products" cols="1" rowHeight="100px">
+        <mat-grid-tile>
+            <mat-card class="message-shadow">
+                <mat-card-content>
+                  <p>
+                    To select a product, first select a category.
+                  </p>
+                </mat-card-content>
+              </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="2" >
+        <mat-grid-tile class="product-container" *ngFor="let product of products">
+            <app-product [product]="product" (addToCart)="onAddToCart(product)"></app-product>
+        </mat-grid-tile> 
+    </mat-grid-list>
+</div>

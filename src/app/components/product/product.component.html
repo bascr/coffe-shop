@@ -1,0 +1,19 @@
+<mat-card class="product-card product-shadow">
+  <mat-card-header> 
+    <mat-card-title>{{ product.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{ product.detail_image }}" alt="product photo">
+  <mat-card-content>
+    <p>
+      {{ product.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button class="disabled">PRICE: ${{ product.price }}</button>
+    <button mat-button class="disabled">TAX: {{ product.tax }}%</button>
+    <button mat-button (click)="addToCart.emit()">
+      <mat-icon aria-hidden="false" aria-label="cart icon">shopping_cart</mat-icon>
+      ADD TO CART
+    </button>
+  </mat-card-actions>
+</mat-card>
